@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants\Constants.cs" />
+    <Compile Include="Constants\LoadConstants.cs" />
     <Compile Include="LoadEngine.cs" />
     <Compile Include="Loaders\LoaderBase.cs" />
     <Compile Include="Loaders\SQLDBLoader.cs" />
