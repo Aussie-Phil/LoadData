@@ -48,7 +48,7 @@ namespace LoadData.Loaders
         {
             if (string.IsNullOrWhiteSpace(_inputPath))
             {
-                return LoadConstants.ErrNoPath;
+                return LoadConstants.ErrNoPath; 
             }
 
             if (!Directory.Exists(InputPath))
