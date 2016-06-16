@@ -83,6 +83,13 @@ namespace LoadData.Loaders
 
         public override bool InsertData(node data)
         {
+            int temp = 0;
+
+            //Validate - added due to test failure
+            if (data == null || !Int32.TryParse(data.id, out temp))
+            {
+                return false;
+            }
 
             NODES nodeRow = new NODES();
             NODE_LINKS linkRow = null;

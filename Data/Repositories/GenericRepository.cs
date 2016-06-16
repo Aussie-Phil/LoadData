@@ -97,7 +97,10 @@ namespace Data.Repositories
 
         public virtual void Close()
         {
-            Context.Database.Connection.Close();
+            if (Context.Database.Connection.State != System.Data.ConnectionState.Closed)
+            {
+                Context.Database.Connection.Close();
+            }
         }
     }
 }
