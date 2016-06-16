@@ -55,6 +55,7 @@
     <Compile Include="Constants\Constants.cs" />
     <Compile Include="LoadEngine.cs" />
     <Compile Include="Loaders\LoaderBase.cs" />
+    <Compile Include="Loaders\SQLDBLoader.cs" />
     <Compile Include="Model\Node.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

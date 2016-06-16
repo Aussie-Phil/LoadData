@@ -47,6 +47,24 @@ namespace LoadData.Loaders
             _inputPath = inputPath;
         }
 
+        public int Validate()
+        {
+            if (string.IsNullOrWhiteSpace(_inputPath))
+            {
+                return LoadConstants.ErrNoPath;
+            }
 
+            if (!Directory.Exists(InputPath))
+            {
+                return LoadConstants.ErrPathInvalid;
+            }
+
+            if (_loadModel == null)
+            {
+                return LoadConstants.ErrNoModel;
+            }
+
+            return LoadConstants.Success;
+        }
     }
 }
