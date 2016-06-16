@@ -71,6 +71,7 @@
     <Compile Include="Repositories\Models\NODE.cs" />
     <Compile Include="Repositories\Models\NODE_LINKS.cs" />
     <Compile Include="Repositories\NodeDBContext.cs" />
+    <Compile Include="Repositories\NodeLinksRepository.cs" />
     <Compile Include="Repositories\NodeRepository.cs" />
   </ItemGroup>
   <ItemGroup>
