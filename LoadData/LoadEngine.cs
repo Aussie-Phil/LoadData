@@ -21,6 +21,9 @@ namespace LoadData
             _path = inputPath;
 
            //Load
+           //Get files
+           //Load Files
+           
 
             return results;
         }
