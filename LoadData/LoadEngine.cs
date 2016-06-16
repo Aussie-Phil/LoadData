@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LoadData.Constants;
+using LoadData.Loaders;
 
 namespace LoadData
 {
@@ -20,10 +21,16 @@ namespace LoadData
             int results = 0;
             _path = inputPath;
 
-           //Load
-           //Get files
-           //Load Files
-           
+            SQLDBLoader load = new SQLDBLoader(_path);
+
+            results = load.GetFiles();
+
+            if (results == LoadConstants.Success)
+            {
+                results = load.LoadFiles();
+            }
+
+
 
             return results;
         }

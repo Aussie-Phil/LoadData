@@ -1,4 +1,6 @@
 ﻿using LoadData.Constants;
+using LoadData.Model;
+using System;
 using System.IO;
 
 namespace LoadData.Loaders
@@ -62,6 +64,16 @@ namespace LoadData.Loaders
             }
 
             return LoadConstants.Success;
+        }
+
+        public virtual int LoadFiles()
+        {
+            throw new NotImplementedException("This method is not yet implemented. Be sure to Override it.");
+        }
+
+        public virtual bool InsertData(node data)
+        {
+            throw new NotImplementedException("This method is not yet implemented. Be sure to Override it.");
         }
     }
 }

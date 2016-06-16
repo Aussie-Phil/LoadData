@@ -24,14 +24,14 @@ namespace LoadData.Model
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
     [System.Xml.Serialization.XmlRootAttribute(Namespace = "", IsNullable = false)]
-    public partial class Node
+    public partial class node
     {
 
         private string idField;
 
         private string labelField;
 
-        private nodeAdjacentNodesID[][] adjacentNodesField;
+        private nodeAdjacentNodesID[] adjacentNodesField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
@@ -64,7 +64,7 @@ namespace LoadData.Model
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
         [System.Xml.Serialization.XmlArrayItemAttribute("id", typeof(nodeAdjacentNodesID), Form = System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public nodeAdjacentNodesID[][] adjacentNodes
+        public nodeAdjacentNodesID[] adjacentNodes
         {
             get
             {
@@ -113,11 +113,11 @@ namespace LoadData.Model
     public partial class NewDataSet
     {
 
-        private Node[] itemsField;
+        private node[] itemsField;
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute("node")]
-        public Node[] Items
+        public node[] Items
         {
             get
             {

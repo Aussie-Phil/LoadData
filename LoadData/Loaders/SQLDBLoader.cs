@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Data.Repositories.Models;
 using Data.Repositories;
 using LoadData.Constants;
 using System.IO;
+using LoadData.Model;
 
 namespace LoadData.Loaders
 {
     /// <summary>
-    /// 
+    /// Provides the methods to retreive the files and then load them into the DB
     /// </summary>
     internal class SQLDBLoader : LoaderBase
     {
@@ -32,7 +31,7 @@ namespace LoadData.Loaders
         }
 
         /// <summary>
-        /// Populate the list of files in teh path specified
+        /// Populate the list of files in the path specified
         /// </summary>
         /// <returns>Success if validation passes</returns>
         public int GetFiles()
@@ -49,10 +48,42 @@ namespace LoadData.Loaders
             return validationResult;
         }
 
+        public override int LoadFiles()
+        {
+            foreach (string fileName in _fileNames)
+            {
+                string file = File.ReadAllText(fileName);
 
-        //Insert Data
+                node nextData = new node();
 
-        //Load Files
+                nextData = (node)Deserialise.XmlDeserialise<node>(file);
+
+                if (nextData != null)
+                {
+
+                    InsertData(nextData);
+                }
+
+                nextData = null;
+
+            }
+
+            return LoadConstants.Success;
+        }
+
+        public override bool InsertData(node data)
+        {
+
+            NODE nodeRow = new NODE();
+
+            nodeRow.NODE_ID = Convert.ToInt32(data.id);
+            nodeRow.NODE_LABEL = data.label;
+
+            _nodeRepo.Create(nodeRow);
+            _nodeRepo.Save();
+
+            return true;
+        }
 
     }
 }
