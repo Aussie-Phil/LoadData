@@ -50,6 +50,9 @@ namespace LoadData.Loaders
 
         public override int LoadFiles()
         {
+
+            _nodeRepo.DeleteAll();
+
             foreach (string fileName in _fileNames)
             {
                 string file = File.ReadAllText(fileName);
@@ -83,6 +86,12 @@ namespace LoadData.Loaders
             _nodeRepo.Save();
 
             return true;
+        }
+
+        public void Close()
+        {
+            //Would include this with IDisposable if I had more time.
+            _nodeRepo = null;
         }
 
     }

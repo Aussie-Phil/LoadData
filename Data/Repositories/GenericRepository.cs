@@ -43,6 +43,11 @@ namespace Data.Repositories
             return Context.Database.SqlQuery<TEntity>(sql, parameters);
         }
 
+        protected void ExecuteSqlCommand(string sql)
+        {
+            Context.Database.ExecuteSqlCommand(sql);
+        }
+
         protected void ExecuteSqlCommand(string sql, params object[] parameters)
         {
             Context.Database.ExecuteSqlCommand(sql, parameters);

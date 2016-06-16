@@ -30,7 +30,7 @@ namespace LoadData
                 results = load.LoadFiles();
             }
 
-
+            load.Close();
 
             return results;
         }
