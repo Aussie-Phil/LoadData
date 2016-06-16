@@ -94,6 +94,11 @@ namespace Data.Repositories
 
             return updateCount;
         }
+
+        public virtual void Close()
+        {
+            Context.Database.Connection.Close();
+        }
     }
 }
 

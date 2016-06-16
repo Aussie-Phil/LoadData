@@ -9,15 +9,15 @@ namespace Data.Repositories.Models
     public partial class NODE_LINKS
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int NODE_LINKS_ID { get; set; }
 
         public int NODE_ID { get; set; }
 
         public int ADJACENT_NODE_ID { get; set; }
 
-        public virtual NODE NODE { get; set; }
+        public virtual NODES NODE { get; set; }
 
-        public virtual NODE NODE1 { get; set; }
+        //public virtual NODE NODE1 { get; set; }
     }
 }

@@ -68,7 +68,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\Models\NODE.cs" />
+    <Compile Include="Repositories\Models\NODES.cs" />
     <Compile Include="Repositories\Models\NODE_LINKS.cs" />
     <Compile Include="Repositories\NodeDBContext.cs" />
     <Compile Include="Repositories\NodeLinksRepository.cs" />

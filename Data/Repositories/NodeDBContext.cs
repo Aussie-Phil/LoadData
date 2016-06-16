@@ -11,7 +11,7 @@ namespace Data.Repositories
 
         }
 
-        public virtual DbSet<NODE> Nodes { get; set; }
+        public virtual DbSet<NODES> Nodes { get; set; }
         public virtual DbSet<NODE_LINKS> Node_Links { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
